@@ -13,7 +13,7 @@ document.getElementById('signUp').addEventListener('click', event => {
       total = data.totalTime
       document.getElementById('total').textContent = data.totalTime
       document.getElementById('signUpForm').style.display = 'none'
-      document.getElementById('siginInForm').style.display = 'none'
+      document.getElementById('signInForm').style.display = 'none'
       document.getElementById('user').textContent = data.username
       document.getElementById('signOut').style.display = 'block'
     })
@@ -64,7 +64,7 @@ document.getElementById('addItem').addEventListener('click', event => {
           Time: ${document.getElementById('time').value}
         `
 
-      document.getElementById('total').textContent = total + document.getElementById('time').value
+      document.getElementById('total').textContent = total + parseInt(document.getElementById('time').value)
       document.getElementById('items').append(itemElem)
     })
 })
@@ -95,7 +95,7 @@ if (localStorage.getItem('uid')) {
         `
         document.getElementById('items').append(itemElem)
       })
-
+      total = data.totalTime
       document.getElementById('user').textContent = data.username
       document.getElementById('total').textContent = data.totalTime
       document.getElementById('signUpForm').style.display = 'none'
